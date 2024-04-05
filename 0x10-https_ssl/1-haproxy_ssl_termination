@@ -41,11 +41,11 @@ frontend clickviral-frontend
         default_backend clickviral-backend
 
 frontend clickviral-frontend-https
-        bind *:443 ssl crt /etc/letsencrypt/live/www.awuah.tech/fullchain.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.awuah.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend clickviral-backend
 
 backend clickviral-backend
         balance roundrobin
-        server 443201-web-02 100.27.12.5:80 check
-        server 443201-web-01 100.25.136.47:80 check
+        server 443201-web-01 3.90.84.45:80 check
+        server 443201-web-02 34.232.67.3:80 check
